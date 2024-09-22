@@ -44,6 +44,8 @@ input[id*='UserFirstName']
   //span[starts-with(@id,'UserFirstName')]
   //label[starts-with(text(),'First')]
   //label[starts-with(normalize-space(),'First')]
+  //button[normalize-space(text())='Accept All Cookies']
+  //button[normalize-space(@id)='Accept All Cookies']
 
 - Starts-with in css:
   span[id^='UserFirstName']
@@ -57,6 +59,7 @@ input[id*='UserFirstName']
 
 //span[text()='Enter your first name']
 //label[contains(text(),'First name')] - using text
+//button/span[.='XS'] - instead of text() can use '.'
 
 - normalize-space()
   //label[normalize-space()='First name']
@@ -189,7 +192,7 @@ RemoteWebDriver driver2 = new ChromeDriver();
 Locators: XPath vs CssSelector:
 xpath
 Traverse in both forward and backward direction to find element.
-Xpath having many functions and axis to find element
+Xpath having many functions and axes to find element
 Color validation not possible
 Xpath is slower in finding element
 Using text function - element can be found
@@ -222,11 +225,25 @@ Exceptions:
 - org.openqa.selenium.TimeoutException: Expected condition failed: Please check the webElement locator (tried for 10 second(s) with 3000 milliseconds interval)
 
 - org.openqa.selenium.InvalidSelectorException: invalid selector
-  when provided wrong locator 
+  when provided wrong locator
+
+org.openqa.selenium.NoSuchWindowException: no such window: target window already closed
 
 
+- org.openqa.selenium.ElementClickInterceptedException: element click intercepted:
 
 
+Stabilizing the suite:
+
+Locator Strategy
+
+-> uinqe locators [id, name, className, linkText, partialText, tagName]
+-> cssSelector
+-> Xpath
+
+- Avoid Sleeps
+- Use properway of implicit wait
+- not use explicit wait for all elements
 
 
 
