@@ -1,4 +1,4 @@
-package com.sw.examples.cpm.sw.waits;
+package com.sw.examples.com.sw.waits;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;

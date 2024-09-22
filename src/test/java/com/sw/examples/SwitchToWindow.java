@@ -3,6 +3,7 @@ package com.sw.examples;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.WindowType;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.Test;
@@ -46,6 +47,10 @@ public class SwitchToWindow {
         WebElement heading1 = driver.findElement(By.tagName("h3"));
         String headingText1 = heading1.getText();
         System.out.println(headingText1);
+
+        driver.switchTo().newWindow(WindowType.WINDOW);
+        driver.switchTo().newWindow(WindowType.TAB);
+
 
     }
 
